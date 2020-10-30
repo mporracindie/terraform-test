@@ -23,5 +23,5 @@ jobs:
         env:
           AWS_ACCESS_KEY: ${{ secrets.AWS_AK }}
           AWS_SECRET_KEY: ${{ secrets.AWS_SK }}
-          run: cd test && go test -v
+        run: cd test && go test -v
 
