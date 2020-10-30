@@ -4,6 +4,8 @@ on:
   pull_request:
     branches: [ main ]
 
+${{ secrets.SuperSecret }}
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -20,5 +22,8 @@ jobs:
       - name: Run build
         run: go build .
       - name: Run testing
-        run: cd test && go test -v
+        env:
+          AWS_ACCESS_KEY: ${{ secrets.AWS_AK }}
+          AWS_SECRET_KEY: ${{ secrets.AWS_SK }}
+          run: cd test && go test -v
 
