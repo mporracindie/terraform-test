@@ -16,7 +16,7 @@ func TestTerraformAwsHelloWorldExample(t *testing.T) {
 
 	terraformOptions := terraform.WithDefaultRetryableErrors(t, &terraform.Options{
 		// The path to where our Terraform code is located
-		TerraformDir: ".",
+		TerraformDir: "../",
 		// VarFiles:     []string{"vars.tfvars"},
 		Vars: map[string]interface{}{"s3_bucket": s3_bucket, "s3_files": file_name},
 	})
