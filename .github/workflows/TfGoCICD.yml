@@ -17,8 +17,6 @@ jobs:
         run: |
           go version
           go get -u "github.com/gruntwork-io/terratest/modules/terraform"
-      - name: Run build
-        run: go build .
       - name: Run testing
         env:
           AWS_ACCESS_KEY: ${{ secrets.AWS_AK }}
